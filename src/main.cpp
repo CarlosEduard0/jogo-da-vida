@@ -125,8 +125,13 @@ void processarDados(string nomeArquivo, Life &life) {
     string line;
     //Recupera o tamanho da configuração
     getline(arquivo, line);
-    life.setnLin(line[0] - '0');
-    life.setnCol(line[2] - '0');
+    stringstream linha(line);
+    int linhas;
+    int colunas;
+    linha >> linhas;
+    linha >> colunas;
+    life.setnLin(linhas);
+    life.setnCol(colunas);
 
     getline(arquivo, line);
     life.setCaracter(line[0]);
